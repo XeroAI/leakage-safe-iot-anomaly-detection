@@ -116,9 +116,6 @@ python smd_event_benchmark.py
 
 # Optional: single LST-TFDN run (MSL by default; set DATASET_NAME in train.py for SMD)
 python train.py
-
-# Optional: schematic figures (uses tabulated paper numbers, not checkpoints)
-python generate_paper_figures.py
 ```
 
 
