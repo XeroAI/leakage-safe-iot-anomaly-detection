@@ -29,11 +29,10 @@ The contribution is a leakage-safe event-level evaluation protocol and an effici
 | `smd_event_benchmark.py` | Per-machine SMD event-level benchmark |
 | `benchmark_smd_all.py` | SMD machine listing helper |
 | `preprocess_smd.py` / `preprocess_smd_all.py` | Convert SMD `.txt` files to `.npy` |
-| `generate_paper_figures.py` | Publication figures (no trained weights required) |
 | `explainability.py` | Illustrative saliency maps (requires a checkpoint; see §7) |
 | `multi_seed_eval.py` | Repeated-seed wrapper around `train.py` |
 
-**Not included:** model weights, raw datasets, and manuscript LaTeX.
+**Not included:** model weights and raw datasets.
 
 ## 3. Requirements
 
@@ -47,10 +46,42 @@ CPU-only PyTorch is sufficient. Dedicated GPU is optional.
 
 ## 4. Datasets
 
-Public benchmarks only. See `datasets/README.md` for download links and the expected folder layout.
+This repository does **not** ship MSL or SMD arrays. Place the public files as follows after download.
 
-- **MSL:** `datasets/MSL/MSL_train.npy`, `MSL_test.npy`, `MSL_test_label.npy`
-- **SMD:** `datasets/SMD/train|test|test_label/machine-*.txt`
+## MSL (Mars Science Laboratory)
+
+Source: NASA/JPL Telemanom release  
+https://github.com/khundman/telemanom  
+Raw archive: https://s3-us-west-2.amazonaws.com/telemanom/data.zip
+
+Expected layout:
+
+```
+datasets/MSL/MSL_train.npy
+datasets/MSL/MSL_test.npy
+datasets/MSL/MSL_test_label.npy
+```
+
+## SMD (Server Machine Dataset)
+
+Source: OmniAnomaly  
+https://github.com/NetManAIOps/OmniAnomaly  
+Dataset folder: `ServerMachineDataset`
+
+Expected layout:
+
+```
+datasets/SMD/train/machine-*.txt
+datasets/SMD/test/machine-*.txt
+datasets/SMD/test_label/machine-*.txt
+```
+
+Convert one machine (or all machines) to `.npy` with:
+
+```bash
+python preprocess_smd.py
+python preprocess_smd_all.py
+```
 
 ## 5. Protocol (paper default)
 
