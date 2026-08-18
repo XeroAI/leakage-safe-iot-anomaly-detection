@@ -12,7 +12,7 @@ The contribution is a leakage-safe event-level evaluation protocol and an effici
 
 - **Title:** Leakage-Safe Event-Level Evaluation of Compact Detectors for Multivariate IoT Anomaly Detection
 - **Venue:** *Internet of Things* — Elsevier (submitted)
-- **Authors:** Adil Afzal (corresponding author), Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi
+- **Authors:** Adil Afzal (corresponding author), Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, Natalia Kryvinska
 
 ## 2. What this repository includes
 
