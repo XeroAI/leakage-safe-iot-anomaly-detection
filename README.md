@@ -4,14 +4,14 @@ This repository contains the **code required to reproduce** the experiments in t
 
 **This paper is submitted to *Internet of Things* — Elsevier.**
 
-The contribution is a leakage-safe event-level evaluation protocol and an efficiency–accuracy comparison of compact CNN / CNN–Transformer detectors on MSL and SMD. It is **not** a state-of-the-art F1 claim and **not** a deployment recommendation.
+The contribution is a leakage-safe event-level evaluation protocol and an efficiency–accuracy comparison of compact CNN / CNN–Transformer detectors on MSL and SMD. It is **not** a state-ofthe-art F1 claim and **not** a deployment recommendation.
 
 ---
 
 ## 1. Paper
 
 - **Title:** Leakage-Safe Event-Level Evaluation of Compact Detectors for Multivariate IoT Anomaly Detection
-- **Venue:** *Internet of Things* — Elsevier (submitted)
+- **Venue:** *Array* — Elsevier (submitted)
 - **Authors:** Adil Afzal (corresponding author), Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, Natalia Kryvinska
 
 ## 2. What this repository includes
@@ -132,4 +132,4 @@ Weights will be available on request to the corresponding author on a reasonable
 
 ## 9. Citation
 
-Available soon (Submitted to *Internet of Things* — Elsevier).
+Available soon (Submitted to *Array* — Elsevier).
