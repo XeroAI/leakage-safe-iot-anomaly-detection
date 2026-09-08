@@ -2,7 +2,7 @@
 
 This repository contains the **code required to reproduce** the experiments in the paper.
 
-**This paper is submitted to *Internet of Things* — Elsevier.**
+**This paper is submitted to *Array* — Elsevier.**
 
 The contribution is a leakage-safe event-level evaluation protocol and an efficiency–accuracy comparison of compact CNN / CNN–Transformer detectors on MSL and SMD. It is **not** a state-ofthe-art F1 claim and **not** a deployment recommendation.
 
