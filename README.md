@@ -1,4 +1,4 @@
-# Leakage-Safe Event-Level Evaluation of Compact Detectors for Multivariate IoT Anomaly Detection
+# Leakage-Safe Event-Level Evaluation of Compact Detectors on Multivariate IoT Telemetry
 
 This repository contains the **code required to reproduce** the experiments in the paper.
 
@@ -10,7 +10,7 @@ The contribution is a leakage-safe event-level evaluation protocol and an effici
 
 ## 1. Paper
 
-- **Title:** Leakage-Safe Event-Level Evaluation of Compact Detectors for Multivariate IoT Anomaly Detection
+- **Title:** Leakage-Safe Event-Level Evaluation of Compact Detectors on Multivariate IoT Telemetry
 - **Venue:** *Array* — Elsevier (submitted)
 - **Authors:** Adil Afzal (corresponding author), Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, Natalia Kryvinska
 
