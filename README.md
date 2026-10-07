@@ -13,7 +13,7 @@ The contribution is an event-exclusive (leakage-safe) evaluation protocol and an
 - **Title:** Event-Exclusive Evaluation Reveals Ranking Instability of Compact Detectors on Multivariate IoT Telemetry
 - **Venue:** *IEEE Access* (submitted)
 - **Authors:** Adil Afzal, Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, Natalia Kryvinska
-- **Corresponding authors:** Adil Afzal (`adil@xeroai.com`), Natalia Kryvinska (`natalia.kryvinska@fm.uniba.sk`)
+- **Corresponding authors:** Adil Afzal (`adil@xeroai.com`)
 
 ## 2. What this repository includes
 
