@@ -1,18 +1,19 @@
-# Leakage-Safe Event-Level Evaluation of Compact Detectors on Multivariate IoT Telemetry
+# Event-Exclusive Evaluation Reveals Ranking Instability of Compact Detectors on Multivariate IoT Telemetry
 
 This repository contains the **code required to reproduce** the experiments in the paper.
 
-**This paper is submitted to *Array* — Elsevier.**
+**This paper is submitted to *IEEE Access*.**
 
-The contribution is a leakage-safe event-level evaluation protocol and an efficiency–accuracy comparison of compact CNN / CNN–Transformer detectors on MSL and SMD. It is **not** a state-ofthe-art F1 claim and **not** a deployment recommendation.
+The contribution is an event-exclusive (leakage-safe) evaluation protocol and an efficiency–accuracy / ranking characterization of compact CNN / CNN–Transformer detectors on MSL and SMD. It is **not** a state-of-the-art F1 claim and **not** a deployment recommendation.
 
 ---
 
 ## 1. Paper
 
-- **Title:** Leakage-Safe Event-Level Evaluation of Compact Detectors on Multivariate IoT Telemetry
-- **Venue:** *Array* — Elsevier (submitted)
-- **Authors:** Adil Afzal (corresponding author), Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, Natalia Kryvinska
+- **Title:** Event-Exclusive Evaluation Reveals Ranking Instability of Compact Detectors on Multivariate IoT Telemetry
+- **Venue:** *IEEE Access* (submitted)
+- **Authors:** Adil Afzal, Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, Natalia Kryvinska
+- **Corresponding authors:** Adil Afzal (`adil@xeroai.com`), Natalia Kryvinska (`natalia.kryvinska@fm.uniba.sk`)
 
 ## 2. What this repository includes
 
@@ -26,13 +27,14 @@ The contribution is a leakage-safe event-level evaluation protocol and an effici
 | `ablation_study.py` | MSL ablations (CNN-only, standard attention, SPE, no CNN) |
 | `tierB_leaky_vs_event.py` | Matched leaky stratified vs event-level comparison |
 | `revision_experiments.py` | Protocol checks, shallow baselines (logistic regression, HistGB), figure overlays |
+| `unsupervised_b_sweep.py` | Isolation Forest + PCA on same 5S features; context-buffer $B$ sweep |
 | `smd_event_benchmark.py` | Per-machine SMD event-level benchmark |
 | `benchmark_smd_all.py` | SMD machine listing helper |
 | `preprocess_smd.py` / `preprocess_smd_all.py` | Convert SMD `.txt` files to `.npy` |
 | `explainability.py` | Illustrative saliency maps (requires a checkpoint; see §7) |
 | `multi_seed_eval.py` | Repeated-seed wrapper around `train.py` |
 
-**Not included:** model weights and raw datasets.
+**Not included:** model weights, raw datasets, and manuscript LaTeX.
 
 ## 3. Requirements
 
@@ -46,47 +48,15 @@ CPU-only PyTorch is sufficient. Dedicated GPU is optional.
 
 ## 4. Datasets
 
-This repository does **not** ship MSL or SMD arrays. Place the public files as follows after download.
+Public benchmarks only. See `datasets/README.md` for download links and the expected folder layout.
 
-## MSL (Mars Science Laboratory)
-
-Source: NASA/JPL Telemanom release  
-https://github.com/khundman/telemanom  
-Raw archive: https://s3-us-west-2.amazonaws.com/telemanom/data.zip
-
-Expected layout:
-
-```
-datasets/MSL/MSL_train.npy
-datasets/MSL/MSL_test.npy
-datasets/MSL/MSL_test_label.npy
-```
-
-## SMD (Server Machine Dataset)
-
-Source: OmniAnomaly  
-https://github.com/NetManAIOps/OmniAnomaly  
-Dataset folder: `ServerMachineDataset`
-
-Expected layout:
-
-```
-datasets/SMD/train/machine-*.txt
-datasets/SMD/test/machine-*.txt
-datasets/SMD/test_label/machine-*.txt
-```
-
-Convert one machine (or all machines) to `.npy` with:
-
-```bash
-python preprocess_smd.py
-python preprocess_smd_all.py
-```
+- **MSL:** `datasets/MSL/MSL_train.npy`, `MSL_test.npy`, `MSL_test_label.npy`
+- **SMD:** `datasets/SMD/train|test|test_label/machine-*.txt`
 
 ## 5. Protocol (paper default)
 
 - Window length \(T=100\), stride \(\Delta=10\)
-- Event-level holdout, event-split seed \(s_{\mathrm{evt}}=42\)
+- Event-exclusive holdout, event-split seed \(s_{\mathrm{evt}}=42\)
 - Initialization seeds `{42, 123, 456, 789, 1024}` on MSL
 - Threshold \(\tau^*\) chosen on validation F1 over `{0.01, …, 0.98}`
 - Compressed CNN length \(T'=50\)
@@ -101,6 +71,7 @@ From this folder, after datasets are in place:
 # Protocol checks + shallow baselines (logistic regression, HistGB)
 python revision_experiments.py --phase verify
 python revision_experiments.py --phase shallow
+python unsupervised_b_sweep.py
 
 # Primary MSL 5-seed campaign
 python phase1_msl_unified.py
@@ -132,4 +103,4 @@ Weights will be available on request to the corresponding author on a reasonable
 
 ## 9. Citation
 
-Available soon (Submitted to *Array* — Elsevier).
+Available soon (Submitted to *IEEE Access*).
