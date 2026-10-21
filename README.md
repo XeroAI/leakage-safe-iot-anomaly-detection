@@ -1,8 +1,13 @@
 # Leakage-safe evaluation of compact detectors on multivariate IoT telemetry
 
-Final training and evaluation code for the *Scientific Reports* manuscript.
+This paper has been submitted to ***Scientific Reports*** (Springer Nature).
 
-This package reproduces **event-exclusive** supervised window scoring on MSL/SMD (and cross-stream checks), with a locked shallow baseline `HistGB_5S_fixedHP`. It is an evaluation-reliability study, not a SOTA F1 contest.
+**Authors:** Adil Afzal, Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, and Natalia Kryvinska.
+
+**Corresponding author:** Adil Afzal (`adil@xeroai.com`).  
+**Co-author (contact):** Natalia Kryvinska (`natalia.kryvinska@fm.uniba.sk`).
+
+This repository contains the final training and evaluation code that reproduces **event-exclusive** supervised window scoring on MSL/SMD (and cross-stream checks), with a locked shallow baseline `HistGB_5S_fixedHP`. The study focuses on evaluation reliability under a leakage-controlled protocol.
 
 ---
 
@@ -75,3 +80,7 @@ Outputs are written under `msl_multipartition/`, `protocol_2x2/`, and `cross_str
 ## License / data
 
 Code supports manuscript reproduction. MSL/SMD remain under Telemanom / OmniAnomaly licenses.
+
+## Citation
+
+A formal citation entry will be uploaded soon (upon acceptance / preprint release).
