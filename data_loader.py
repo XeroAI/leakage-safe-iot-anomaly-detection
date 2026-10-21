@@ -286,6 +286,7 @@ def get_dataloaders(
     smd_base_dir="datasets/SMD",
     event_seed=42,
     seeded_variation=False,
+    context_buffer=None,
 ):
     """
     Build train/val/test loaders.
@@ -310,6 +311,10 @@ def get_dataloaders(
     seeded_variation:
       If True with split_mode=\"event\", distinct event_seed values produce distinct
       partitions (for multi-split variance). Default False preserves published splits.
+
+    context_buffer:
+      Event-protocol normal context length around each anomaly segment. Default
+      None uses max(window_size, 200), matching the published B=200 setting for T=100.
     """
     base_path = f"datasets/{dataset_name}"
 
@@ -343,11 +348,16 @@ def get_dataloaders(
         test_ds = TimeSeriesDataset(test_data, test_labels, window_size, stride)
 
         if split_mode == "event":
+            buf = (
+                int(context_buffer)
+                if context_buffer is not None
+                else max(int(window_size), 200)
+            )
             labeled_train_idx, val_idx, test_idx = _event_level_indices(
                 test_labels,
                 window_size,
                 stride,
-                context_buffer=max(window_size, 200),
+                context_buffer=buf,
                 seed=event_seed,
                 seeded_variation=seeded_variation,
             )
