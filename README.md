@@ -5,7 +5,6 @@ This paper has been submitted to ***Scientific Reports*** (Springer Nature).
 **Authors:** Adil Afzal, Saleh Alghamdi, Sultan Alahmari, Sultan Almutairi, Muhammad Rizwan, Ovidiu Bagdasar, and Natalia Kryvinska.
 
 **Corresponding author:** Adil Afzal (`adil@xeroai.com`).  
-**Co-author (contact):** Natalia Kryvinska (`natalia.kryvinska@fm.uniba.sk`).
 
 This repository contains the final training and evaluation code that reproduces **event-exclusive** supervised window scoring on MSL/SMD (and cross-stream checks), with a locked shallow baseline `HistGB_5S_fixedHP`. The study focuses on evaluation reliability under a leakage-controlled protocol.
 
