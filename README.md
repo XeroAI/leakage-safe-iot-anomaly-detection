@@ -1,4 +1,4 @@
-# Leakage-safe evaluation of compact detectors on multivariate IoT telemetry
+# Event-exclusive evaluation of compact detectors]{Event-exclusive evaluation of compact detectors for multivariate telemetry: ranking instability under supervised window scoring
 
 This paper has been submitted to ***Scientific Reports*** (Springer Nature).
 
